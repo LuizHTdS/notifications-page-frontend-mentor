@@ -45,8 +45,19 @@ const Notification = (props: NotificationProps) => {
           <b>{props.username}</b>
           <>{getAction(props)}</>
         </h3>
+        <h4>{props.time} ago</h4>
         {!props.isRead && <div className='unreadCheckmark'></div>}
       </div>
+      {props.message && (
+        <div className='notification__body--message'>{props.message}</div>
+      )}
+      {props.pictureLink && (
+        <img
+          src={props.pictureLink}
+          alt='your posted picture'
+          className='notification__picture'
+        />
+      )}
     </div>
   );
 };
