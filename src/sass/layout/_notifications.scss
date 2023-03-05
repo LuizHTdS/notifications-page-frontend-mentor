@@ -1,0 +1,62 @@
+@use '../abstracts/' as *;
+
+.unread {
+  background-color: $light-grayish-blue-1;
+}
+
+.notification {
+  margin: 0 4rem 1rem 4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+  h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $dark-grayish-blue;
+  }
+  img {
+    width: 6.5rem;
+    margin-right: 2rem;
+  }
+  b {
+    color: $very-dark-blue;
+    &:hover {
+      color: $blue;
+      cursor: pointer;
+    }
+  }
+  h4 {
+    color: $grayish-blue;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__picture {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .notification__body--message {
+    background-color: $light-grayish-blue-2;
+    flex-basis: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 8.5rem 0 8.5rem;
+
+    p {
+      font-size: 1.8rem;
+      color: $dark-grayish-blue;
+    }
+  }
+}
+
+.unreadCheckmark {
+  background-color: $red;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 40rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}

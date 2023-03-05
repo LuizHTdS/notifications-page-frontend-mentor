@@ -88,7 +88,7 @@ header {
   align-items: center;
 }
 .notifications h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 .notifications__number {
   background-color: hsl(219, 85%, 26%);
@@ -102,10 +102,68 @@ header {
 
 .markAsReadBtn {
   color: hsl(219, 12%, 42%);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-left: auto;
 }
 .markAsReadBtn:hover {
   color: hsl(219, 85%, 26%);
   cursor: pointer;
+}
+
+.unread {
+  background-color: hsl(211, 68%, 94%);
+}
+
+.notification {
+  margin: 0 4rem 1rem 4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+}
+.notification h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: hsl(219, 12%, 42%);
+}
+.notification img {
+  width: 6.5rem;
+  margin-right: 2rem;
+}
+.notification b {
+  color: hsl(224, 21%, 14%);
+}
+.notification b:hover {
+  color: hsl(219, 85%, 26%);
+  cursor: pointer;
+}
+.notification h4 {
+  color: hsl(219, 14%, 63%);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.notification__picture {
+  margin-left: auto;
+  cursor: pointer;
+}
+.notification .notification__body--message {
+  background-color: hsl(205, 33%, 90%);
+  flex-basis: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 2rem 8.5rem 0 8.5rem;
+}
+.notification .notification__body--message p {
+  font-size: 1.8rem;
+  color: hsl(219, 12%, 42%);
+}
+
+.unreadCheckmark {
+  background-color: hsl(1, 90%, 64%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 40rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
 }/*# sourceMappingURL=main.css.map */
