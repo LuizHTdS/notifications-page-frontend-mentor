@@ -14,7 +14,7 @@ interface NotificationProps {
   message?: string;
   groupName?: string;
   pictureLink?: string;
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 function getAction(props: NotificationProps) {
