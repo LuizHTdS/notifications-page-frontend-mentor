@@ -1,0 +1,35 @@
+@use '../abstracts/_variables' as *;
+
+header {
+  display: flex;
+  margin: 4rem;
+  align-items: center;
+}
+
+.notifications {
+  display: flex;
+  align-items: center;
+  h1 {
+    font-size: 2.5rem;
+  }
+  &__number {
+    background-color: $blue;
+    font-weight: 800;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    padding: 0.125rem 1.1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.markAsReadBtn {
+  color: $dark-grayish-blue;
+  font-size: 1.5rem;
+  margin-left: auto;
+
+  &:hover {
+    color: $blue;
+    cursor: pointer;
+  }
+}
