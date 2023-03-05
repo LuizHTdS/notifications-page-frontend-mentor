@@ -1,9 +1,9 @@
-import data from './data.js';
 import Notification from './components/Notification';
 import NotificationCounter from './components/NotificationCounter.js';
 import MarkAsReadBtn from './components/MarkAsReadBtn.js';
+import notifications from './data.js';
 
-const notificationsEl = data.notifications.map((not) => {
+const notificationsEl = notifications.map((not) => {
   if (not.action === 'reacted') {
     return (
       <Notification
@@ -11,7 +11,7 @@ const notificationsEl = data.notifications.map((not) => {
         profilePicLink={not.profilePic}
         action={not.action}
         isRead={not.isRead}
-        key={not.time}
+        key={not.username}
         post={not.post}
         time={not.time}
       />
@@ -23,7 +23,7 @@ const notificationsEl = data.notifications.map((not) => {
         profilePicLink={not.profilePic}
         action={not.action}
         isRead={not.isRead}
-        key={not.time}
+        key={not.username}
         time={not.time}
       />
     );
@@ -34,7 +34,7 @@ const notificationsEl = data.notifications.map((not) => {
         profilePicLink={not.profilePic}
         action={not.action}
         isRead={not.isRead}
-        key={not.time}
+        key={not.username}
         time={not.time}
         groupName={not.groupName}
       />
@@ -46,7 +46,7 @@ const notificationsEl = data.notifications.map((not) => {
         profilePicLink={not.profilePic}
         action={not.action}
         isRead={not.isRead}
-        key={not.time}
+        key={not.username}
         time={not.time}
         message={not.message}
       />
@@ -58,7 +58,7 @@ const notificationsEl = data.notifications.map((not) => {
         profilePicLink={not.profilePic}
         action={not.action}
         isRead={not.isRead}
-        key={not.time}
+        key={not.username}
         time={not.time}
         pictureLink={not.pictureLink}
       />

@@ -18,31 +18,32 @@ interface NotificationProps {
 }
 
 function getAction(props: NotificationProps) {
-  props.action === 'reacted'
-    ? `reacted to your recent post ${props.post}`
-    : props.action === 'followed'
-    ? `followed you`
-    : props.action === 'joinedGroup'
-    ? `has joined your group ${props.groupName}`
-    : props.action === 'pm'
-    ? `sent you a private message`
-    : props.action === 'commented'
-    ? `commented on your picture`
-    : props.action === 'leftGroup'
-    ? `left the group ${props.groupName}`
-    : console.error('Something went wrong with the type of the notification');
+  if (props.action === 'reacted') {
+    return `reacted to your recent post ${props.post}`;
+  } else if (props.action === 'followed') {
+    return `followed you`;
+  } else if (props.action === 'joinedGroup') {
+    return `has joined your group ${props.groupName}`;
+  } else if (props.action === 'pm') {
+    return `sent you a private message`;
+  } else if (props.action === 'commented') {
+    return `commented on your picture`;
+  } else if (props.action === 'leftGroup') {
+    return `left the group ${props.groupName}`;
+  } else
+    console.error('Something went wrong with the type of the notification');
 }
 
 const Notification = (props: NotificationProps) => {
   return (
-    <div className='notification'>
+    <div className={props.isRead ? `notification` : `notification unread`}>
       <img
         src={props.profilePicLink}
         alt={`${props.username}'s profile picture`}
       />
       <div className='notification__body'>
         <h3>
-          <b>{props.username}</b>
+          <b>{props.username} </b>
           <>{getAction(props)}</>
         </h3>
         <h4>{props.time} ago</h4>
