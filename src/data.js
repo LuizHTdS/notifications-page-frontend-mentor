@@ -59,7 +59,7 @@ const notifications = [
     action: 'pm',
     isRead: true,
     time: '5 days',
-    message: `Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game`,
+    message: `Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.`,
   },
   {
     username: users[4].username,
