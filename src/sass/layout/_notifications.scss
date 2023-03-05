@@ -1,6 +1,7 @@
 @use '../abstracts/' as *;
 
 .unread {
+  cursor: pointer;
   background-color: $light-grayish-blue-1;
 }
 
@@ -43,7 +44,8 @@
     flex-basis: 100%;
     padding: 2rem;
     border-radius: 1rem;
-    margin: 2rem 8.5rem 0 8.5rem;
+    cursor: pointer;
+    margin: 2rem 8.5rem 4rem 8.5rem;
 
     p {
       font-size: 1.8rem;

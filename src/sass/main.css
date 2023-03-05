@@ -111,6 +111,7 @@ header {
 }
 
 .unread {
+  cursor: pointer;
   background-color: hsl(211, 68%, 94%);
 }
 
@@ -152,7 +153,8 @@ header {
   flex-basis: 100%;
   padding: 2rem;
   border-radius: 1rem;
-  margin: 2rem 8.5rem 0 8.5rem;
+  cursor: pointer;
+  margin: 2rem 8.5rem 4rem 8.5rem;
 }
 .notification .notification__body--message p {
   font-size: 1.8rem;
