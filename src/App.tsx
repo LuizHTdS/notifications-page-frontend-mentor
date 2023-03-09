@@ -2,76 +2,55 @@ import Notification from './components/Notification';
 import NotificationCounter from './components/NotificationCounter.js';
 import MarkAsReadBtn from './components/MarkAsReadBtn.js';
 import notifications from './data.js';
-
-const notificationsEl = notifications.map((not) => {
-  if (not.action === 'reacted') {
-    return (
-      <Notification
-        username={not.username}
-        profilePicLink={not.profilePic}
-        action={not.action}
-        isRead={not.isRead}
-        key={not.username}
-        post={not.post}
-        time={not.time}
-      />
-    );
-  } else if (not.action === 'followed') {
-    return (
-      <Notification
-        username={not.username}
-        profilePicLink={not.profilePic}
-        action={not.action}
-        isRead={not.isRead}
-        key={not.username}
-        time={not.time}
-      />
-    );
-  } else if (not.action === 'joinedGroup' || not.action === 'leftGroup') {
-    return (
-      <Notification
-        username={not.username}
-        profilePicLink={not.profilePic}
-        action={not.action}
-        isRead={not.isRead}
-        key={not.username}
-        time={not.time}
-        groupName={not.groupName}
-      />
-    );
-  } else if (not.action === 'pm') {
-    return (
-      <Notification
-        username={not.username}
-        profilePicLink={not.profilePic}
-        action={not.action}
-        isRead={not.isRead}
-        key={not.username}
-        time={not.time}
-        message={not.message}
-      />
-    );
-  } else if (not.action === 'commented') {
-    return (
-      <Notification
-        username={not.username}
-        profilePicLink={not.profilePic}
-        action={not.action}
-        isRead={not.isRead}
-        key={not.username}
-        time={not.time}
-        pictureLink={not.pictureLink}
-      />
-    );
-  }
-});
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [isRead, setIsRead] = useState(Array<boolean>);
+  useEffect(() => {
+    const updatedIsRead = notifications.map((not) => not.isRead);
+    setIsRead(updatedIsRead);
+  }, [notifications]);
+
+  const notificationsEl = notifications.map((not, index) => {
+    const { username, profilePic, action, time } = not;
+    const props = {
+      username,
+      profilePicLink: profilePic,
+      action,
+      isRead: isRead[index],
+      time,
+    };
+    switch (action) {
+      case 'reacted':
+        return <Notification {...props} key={username} post={not.post} />;
+      case 'followed':
+        return <Notification {...props} key={username} />;
+      case 'joinedGroup':
+      case 'leftGroup':
+        return (
+          <Notification {...props} key={username} groupName={not.groupName} />
+        );
+      case 'pm':
+        return <Notification {...props} key={username} message={not.message} />;
+      case 'commented':
+        return (
+          <Notification
+            {...props}
+            key={username}
+            pictureLink={not.pictureLink}
+          />
+        );
+      default:
+        return null;
+    }
+  });
   return (
     <main>
       <header>
-        <NotificationCounter notifications={3} />
-        <MarkAsReadBtn />
+        <NotificationCounter
+          notifications={isRead.filter((read) => !read).length}
+        />
+        <MarkAsReadBtn isRead={isRead} setIsRead={setIsRead} />
       </header>
       <section>{notificationsEl}</section>
     </main>

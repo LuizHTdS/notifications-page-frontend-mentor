@@ -1,13 +1,7 @@
 interface NotificationProps {
   username: string;
   profilePicLink: string;
-  action:
-    | 'reacted'
-    | 'followed'
-    | 'joinedGroup'
-    | 'pm'
-    | 'commented'
-    | 'leftGroup';
+  action: string;
   isRead: boolean;
   time: string;
   post?: string;

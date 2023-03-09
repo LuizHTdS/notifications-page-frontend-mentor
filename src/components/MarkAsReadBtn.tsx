@@ -1,10 +1,16 @@
-const MarkAsReadBtn = () => {
-  const placeHolder = () => {
-    console.log('button clicked!');
-  };
+interface buttonProps {
+  isRead: boolean[];
+  setIsRead: React.Dispatch<React.SetStateAction<boolean[]>>;
+}
 
+const MarkAsReadBtn = (props: buttonProps) => {
+  const markAllAsRead = () => {
+    const newIsRead = [...props.isRead];
+    newIsRead.fill(true);
+    props.setIsRead(newIsRead);
+  };
   return (
-    <div className='markAsReadBtn' onClick={placeHolder}>
+    <div className='markAsReadBtn' onClick={markAllAsRead}>
       Mark all as read
     </div>
   );
