@@ -15,7 +15,7 @@ function getAction(props: NotificationProps) {
   if (props.action === 'reacted') {
     return (
       <>
-        reacted to your recent post <b>{props.post}</b>
+        reacted to your recent post <a href='/'>{props.post}</a>
       </>
     );
   } else if (props.action === 'followed') {
@@ -23,7 +23,7 @@ function getAction(props: NotificationProps) {
   } else if (props.action === 'joinedGroup') {
     return (
       <>
-        joined the group <b>{props.groupName}</b>
+        joined the group <a href='/'>{props.groupName}</a>
       </>
     );
   } else if (props.action === 'pm') {
@@ -33,7 +33,7 @@ function getAction(props: NotificationProps) {
   } else if (props.action === 'leftGroup') {
     return (
       <>
-        left the group <b>{props.groupName}</b>
+        left the group <a href='/'>{props.groupName}</a>
       </>
     );
   } else
@@ -42,32 +42,34 @@ function getAction(props: NotificationProps) {
 
 const Notification = (props: NotificationProps) => {
   return (
-    <div className={props.isRead ? `notification` : `notification unread`}>
-      <img
-        src={props.profilePicLink}
-        alt={`${props.username}'s profile picture`}
-      />
-      <div className='notification__body'>
-        <h3>
-          <b>{props.username} </b>
-          <>{getAction(props)}</>
-        </h3>
-        <h4>{props.time} ago</h4>
+    <>
+      <div className={props.isRead ? `notification` : `notification unread`}>
+        <img
+          src={props.profilePicLink}
+          alt={`${props.username}'s profile picture`}
+        />
+        <div className='notification__body'>
+          <h3>
+            <b>{props.username} </b>
+            <>{getAction(props)}</>
+          </h3>
+          <h4>{props.time} ago</h4>
+        </div>
+        {props.pictureLink && (
+          <img
+            src={props.pictureLink}
+            alt='your posted picture'
+            className='notification__picture'
+          />
+        )}
+        {!props.isRead && <div className='unreadCheckmark'></div>}
       </div>
       {props.message && (
         <div className='notification__body--message'>
           <p>{props.message}</p>
         </div>
       )}
-      {props.pictureLink && (
-        <img
-          src={props.pictureLink}
-          alt='your posted picture'
-          className='notification__picture'
-        />
-      )}
-      {!props.isRead && <div className='unreadCheckmark'></div>}
-    </div>
+    </>
   );
 };
 
