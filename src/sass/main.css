@@ -138,13 +138,30 @@ header {
   padding: 1.5rem 2rem;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 480px) {
+  .notification {
+    flex-wrap: nowrap;
+  }
+}
 .notification h3 {
   font-size: 2rem;
   font-weight: 500;
   color: hsl(219, 12%, 42%);
 }
+@media screen and (max-width: 480px) {
+  .notification h3 {
+    font-size: 1.5rem;
+  }
+}
 .notification img {
   width: 6.5rem;
+}
+@media screen and (max-width: 480px) {
+  .notification img {
+    width: 3.5rem;
+  }
+}
+.notification__pfp {
   margin-right: 2rem;
 }
 .notification b {
@@ -154,16 +171,31 @@ header {
   color: hsl(219, 85%, 26%);
   cursor: pointer;
 }
+.notification a {
+  color: hsl(219, 12%, 42%);
+  text-decoration: none;
+  font-weight: 800;
+}
+.notification a:hover {
+  color: hsl(219, 85%, 26%);
+  cursor: pointer;
+}
 .notification h4 {
   color: hsl(219, 14%, 63%);
   font-size: 1.5rem;
   font-weight: 500;
+  flex-basis: 100%;
+}
+@media screen and (max-width: 480px) {
+  .notification h4 {
+    font-size: 1.2rem;
+  }
 }
 .notification__picture {
   margin-left: auto;
   cursor: pointer;
 }
-.notification .notification__body--message {
+.notification__body--message {
   background-color: hsl(205, 33%, 90%);
   flex-basis: 100%;
   padding: 2rem;
@@ -171,9 +203,22 @@ header {
   cursor: pointer;
   margin: 2rem 8.5rem 4rem 8.5rem;
 }
-.notification .notification__body--message p {
+@media screen and (max-width: 480px) {
+  .notification__body--message {
+    padding: 1.5rem;
+    background-color: transparent;
+    border: 0.1rem solid hsl(219, 12%, 42%);
+    margin: 0rem 9.5rem 2rem 11.5rem;
+  }
+}
+.notification__body--message p {
   font-size: 1.8rem;
   color: hsl(219, 12%, 42%);
+}
+@media screen and (max-width: 480px) {
+  .notification__body--message p {
+    font-size: 1.5rem;
+  }
 }
 
 .unreadCheckmark {
@@ -183,4 +228,11 @@ header {
   border-radius: 40rem;
   margin-bottom: 2rem;
   margin-left: 1rem;
+}
+@media screen and (max-width: 480px) {
+  .unreadCheckmark {
+    padding: 0.35rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */

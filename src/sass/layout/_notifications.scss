@@ -12,17 +12,43 @@
   align-items: center;
   padding: 1.5rem 2rem;
   flex-wrap: wrap;
+  @include mobile {
+    flex-wrap: nowrap;
+  }
   h3 {
     font-size: 2rem;
     font-weight: 500;
     color: $dark-grayish-blue;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
   img {
     width: 6.5rem;
+
+    @include mobile {
+      width: 3.5rem;
+    }
+  }
+
+  &__pfp {
     margin-right: 2rem;
   }
+
   b {
     color: $very-dark-blue;
+    &:hover {
+      color: $blue;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    color: $dark-grayish-blue;
+    text-decoration: none;
+    font-weight: 800;
+
     &:hover {
       color: $blue;
       cursor: pointer;
@@ -32,24 +58,41 @@
     color: $grayish-blue;
     font-size: 1.5rem;
     font-weight: 500;
+    flex-basis: 100%;
+    @include mobile {
+      font-size: 1.2rem;
+    }
   }
 
   &__picture {
     margin-left: auto;
     cursor: pointer;
+
+    @include mobile {
+    }
+  }
+}
+.notification__body--message {
+  background-color: $light-grayish-blue-2;
+  flex-basis: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 2rem 8.5rem 4rem 8.5rem;
+
+  @include mobile {
+    padding: 1.5rem;
+    background-color: transparent;
+    border: 0.1rem solid $dark-grayish-blue;
+    margin: 0rem 9.5rem 2rem 11.5rem;
   }
 
-  .notification__body--message {
-    background-color: $light-grayish-blue-2;
-    flex-basis: 100%;
-    padding: 2rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    margin: 2rem 8.5rem 4rem 8.5rem;
+  p {
+    font-size: 1.8rem;
+    color: $dark-grayish-blue;
 
-    p {
-      font-size: 1.8rem;
-      color: $dark-grayish-blue;
+    @include mobile {
+      font-size: 1.5rem;
     }
   }
 }
@@ -61,4 +104,10 @@
   border-radius: 40rem;
   margin-bottom: 2rem;
   margin-left: 1rem;
+
+  @include mobile {
+    padding: 0.35rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
 }

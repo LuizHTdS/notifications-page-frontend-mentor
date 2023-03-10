@@ -45,6 +45,7 @@ const Notification = (props: NotificationProps) => {
     <>
       <div className={props.isRead ? `notification` : `notification unread`}>
         <img
+          className='notification__pfp'
           src={props.profilePicLink}
           alt={`${props.username}'s profile picture`}
         />
