@@ -90,6 +90,11 @@ header {
 .notifications h1 {
   font-size: 3rem;
 }
+@media screen and (max-width: 480px) {
+  .notifications h1 {
+    font-size: 2.5rem;
+  }
+}
 .notifications__number {
   background-color: hsl(219, 85%, 26%);
   font-weight: 800;
@@ -99,11 +104,21 @@ header {
   padding: 0.125rem 1.1rem;
   border-radius: 0.5rem;
 }
+@media screen and (max-width: 480px) {
+  .notifications__number {
+    margin-left: 1.25rem;
+  }
+}
 
 .markAsReadBtn {
   color: hsl(219, 12%, 42%);
   font-size: 1.8rem;
   margin-left: auto;
+}
+@media screen and (max-width: 480px) {
+  .markAsReadBtn {
+    font-size: 1.5rem;
+  }
 }
 .markAsReadBtn:hover {
   color: hsl(219, 85%, 26%);
