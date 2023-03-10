@@ -67,7 +67,7 @@ const notifications = [
     action: 'commented',
     isRead: true,
     time: '1 week',
-    pictureLink: '../assets/images/image-chess.webp',
+    pictureLink: './assets/images/image-chess.webp',
   },
   {
     username: users[5].username,
