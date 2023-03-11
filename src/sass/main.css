@@ -132,7 +132,7 @@ header {
 
 .unread {
   cursor: pointer;
-  background-color: hsl(211, 68%, 94%);
+  background-color: #f6fafd;
 }
 
 .notification {
@@ -201,19 +201,25 @@ header {
   cursor: pointer;
 }
 .notification__body--message {
-  background-color: hsl(205, 33%, 90%);
   flex-basis: 100%;
   padding: 2rem;
   border-radius: 1rem;
   cursor: pointer;
   margin: 2rem 8.5rem 4rem 8.5rem;
+  border: 0.1rem solid hsl(219, 12%, 42%);
+}
+.notification__body--message:hover {
+  background-color: hsl(205, 33%, 90%);
+  border: none;
+  margin: 2.1rem 8.51rem 4.1rem 8.51rem;
 }
 @media screen and (max-width: 480px) {
   .notification__body--message {
     padding: 1.5rem;
-    background-color: transparent;
-    border: 0.1rem solid hsl(219, 12%, 42%);
     margin: 0rem 9.5rem 2rem 11.5rem;
+  }
+  .notification__body--message:hover {
+    margin: 0.1rem 9.51rem 2.1rem 11.6rem;
   }
 }
 .notification__body--message p {

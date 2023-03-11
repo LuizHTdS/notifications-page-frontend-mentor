@@ -2,7 +2,7 @@
 
 .unread {
   cursor: pointer;
-  background-color: $light-grayish-blue-1;
+  background-color: lighten($light-grayish-blue-1, 4%);
 }
 
 .notification {
@@ -73,18 +73,26 @@
   }
 }
 .notification__body--message {
-  background-color: $light-grayish-blue-2;
   flex-basis: 100%;
   padding: 2rem;
   border-radius: 1rem;
   cursor: pointer;
   margin: 2rem 8.5rem 4rem 8.5rem;
+  border: 0.1rem solid $dark-grayish-blue;
+
+  &:hover {
+    background-color: $light-grayish-blue-2;
+    border: none;
+    margin: 2.1rem 8.51rem 4.1rem 8.51rem;
+  }
 
   @include mobile {
     padding: 1.5rem;
-    background-color: transparent;
-    border: 0.1rem solid $dark-grayish-blue;
     margin: 0rem 9.5rem 2rem 11.5rem;
+
+    &:hover {
+      margin: 0.1rem 9.51rem 2.1rem 11.6rem;
+    }
   }
 
   p {
